@@ -15,7 +15,6 @@ def order(sentence):
         for word in ary:
             if str(i) in word:
                 accum += word
-
                 accum += " "
     accum = accum.strip()
     return accum

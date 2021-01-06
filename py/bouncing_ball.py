@@ -30,14 +30,16 @@ If all three conditions above are fulfilled, return a positive integer, otherwis
 
 
 def bouncing_ball(h, bounce, window):
+    if h < 0 or ( bounce <= 0 or bounce >= 1 ) or window > h :
+        return -1 
     loop = -1
-
-    while h > 0 and ( bounce >= 0 and bounce <= 1 ) and window < h and loop < 50:
+    while h > window and loop < 100:
         #print( "{}  H {}   % {}   w {} ".format( loop, h, bounce, window))
         h *= bounce 
         loop += 2 
 
     return loop 
+
 
 
 def testing(h, bounce, window, expected):

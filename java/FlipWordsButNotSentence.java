@@ -5,15 +5,22 @@ public class FlipWordsButNotSentence extends Tester {
 	private static String space = " ";
 
 	private static String flip(String s) {
-		return new StringBuffer(s).reverse().toString();
+        return new StringBuffer(s)
+            .reverse()
+            .toString();
 	}
 
 	private static String solution(String original) {
 
-		if (original.trim().isEmpty()) {
+        if (original
+            .trim()
+            .isEmpty()) {
 			return original;
 		}
-		return Stream.of(original.split(space)).map(word -> flip(word)).collect(Collectors.joining(space));
+        return Stream
+            .of(original.split(space))
+            .map(word -> flip(word))
+            .collect(Collectors.joining(space));
 	}
 
 	public static void main(String... strings) {

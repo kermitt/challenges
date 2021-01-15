@@ -9,6 +9,19 @@ function verdict(actual, expected) {
     } 
     console.log(`${isFine} |${actual}|  ----> |${expected}|`)
 }
+
+const divmod = (numerator, denominator) => {
+    /*
+    Floor Division
+    quotient = n // d 
+    remainder = n % d
+    */
+    return {
+        quotient:Math.floor(numerator/denominator),
+        remainder:numerator % denominator
+    }
+}
+
 module.exports = {log, verdict}
 
 

@@ -16,3 +16,8 @@ verdict(solution("abc  xyz    opq"), "cba  zyx    qpo")
 verdict(solution("   "), "   ")
 verdict(solution("This_is_a_long_string"), "gnirts_gnol_a_si_sihT")
 verdict(solution(""), "")
+
+
+    // https://github.com/kermitt/challenges/blob/main/js/FlipWordsButNotSentence.js
+    // https://github.com/kermitt/challenges/blob/main/py/FlipWordsButNotSentence.py
+    // https://github.com/kermitt/challenges/blob/main/java/FlipWordsButNotSentence.java

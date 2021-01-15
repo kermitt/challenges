@@ -5,9 +5,8 @@ yield: cba  zyx    qpo
 """
 from Tester import verdict, log
 
-def flip(original):
-    # I wonder how to do this in python 
-
+def flip_mine(original):
+    # see 'flipword()' for better version
     word = [char for char in original]
     begin = 0
     end = len(word) - 1
@@ -23,8 +22,12 @@ def flip(original):
 
 def solution(original):
     words = list(original.split(" ")) 
-    x = " ".join(map(flip, words))
-    return x
+    x = " ".join(map(flipword, words))
+    return x 
+
+def flipword(word): 
+    # 'generator expression' TODO: Look up
+    return ' '.join(''.join(reversed(letter)) for letter in word.split())
 
 if __name__ == '__main__':
     verdict(solution("abc  xyz    opq"), "cba  zyx    qpo")

@@ -24,7 +24,7 @@ const pad = (num) =>{
     }
     return num
 }
-const make_readable = (seconds) => { 
+const humanReadable_mine = (seconds) => { 
     // hours, seconds = divmod(seconds, 60 ** 2)
     const hours_seconds = divmod(seconds, 60 * 60)
     const hours = pad(hours_seconds.quotient)
@@ -37,9 +37,17 @@ const make_readable = (seconds) => {
     return `${hours}:${minutes}:${seconds}`
 } 
 
-verdict(make_readable(0), "00:00:00")
- verdict(make_readable(5), "00:00:05")
-verdict(make_readable(60), "00:01:00")
-verdict(make_readable(86399), "23:59:59")
-verdict(make_readable(359999), "99:59:59")
+function humanReadable(seconds) {
+    return [seconds / 3600, seconds % 3600 / 60, seconds % 60].map(function(v) {
+      v = Math.floor(v).toString();
+      return v.length == 1 ? '0' + v : v;
+    }).join(':');
+  }
+
+
+verdict(humanReadable(0), "00:00:00")
+verdict(humanReadable(5), "00:00:05")
+verdict(humanReadable(60), "00:01:00")
+verdict(humanReadable(86399), "23:59:59")
+verdict(humanReadable(359999), "99:59:59")
 

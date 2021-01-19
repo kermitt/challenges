@@ -10,5 +10,7 @@ verdict(pig_it("Pig latin is cool"), "igPay atinlay siay oolcay")
 verdict(pig_it("Pig latin ."), "igPay atinlay .")
 verdict(pig_it("yz!"), "zyay!")
 verdict(pig_it("yz !"), "zyay !")
+verdict(pig_it("o"), "oay")
+verdict(pig_it("."), ".")
 
 

@@ -2,6 +2,17 @@ function log(s) {
     console.log(`|${s}|`)
 }
 
+function verdict2(actual, expected) {
+    const a = JSON.stringify( actual )
+    const b = JSON.stringify(expected)
+    let isFine = "FAIL"
+    if ( a == b ) { 
+        isFine = "PASS"
+    } 
+    console.log(`${isFine} |${actual}|  ----> |${expected}|`)
+}
+
+
 function verdict(actual, expected) {
     let isFine = "FAIL"
     if ( actual == expected ) { 
@@ -28,7 +39,7 @@ const isAlphaNumeric = ( word ) => {
         return false
     }
 }
-module.exports = {log, verdict, isAlphaNumeric}
+module.exports = {log, verdict, isAlphaNumeric, divmod, verdict2}
 
 
 //https://github.com/kermitt/challenges/blob/main/py/FlipWordsButNotSentence.py

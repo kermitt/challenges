@@ -66,6 +66,9 @@ public class PigLatin extends Tester {
         verdict(pigIt("z!"), "zay!");
         verdict(pigIt("yz!"), "zyay!");
         verdict(pigIt("yz !"), "zyay !");
+        verdict(pigIt("o"), "oay");
+        verdict(pigIt("."), ".");
+
 	}
 }
 

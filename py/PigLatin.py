@@ -10,7 +10,7 @@ PASS |igPay atinlay siay oolcay|   ---> |igPay atinlay siay oolcay|
 PASS |igPay atinlay.|   ---> |igPay atinlay.|
 PASS |zyay!?!|   ---> |zyay!?!|
 PASS |zyay !|   ---> |zyay !|
-PASS |oay|   ---> |oay|
+FAIL |o|   ---> |oay|
 PASS |.|   ---> |.|
 
 """
@@ -20,7 +20,16 @@ from Tester import verdict, log
 # public static String java_version_of_pig_it(String original) {
 #        return original.replaceAll("(\\w)(\\w*)", "$2$1ay");
 # }
-def pig_it(original):
+
+# loren
+def pig_it(sentence):
+    # Pretty code!
+
+    return re.sub(r"\b(\w)(\w+)", r"\2\1ay",sentence)
+
+# mine follows
+def pig_it_mine(original):
+    # code ugly, but does pass all the tests
     words = list(original.split(" ")) 
     x = " ".join(map(pigify, words))
     return x 

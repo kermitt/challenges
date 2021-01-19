@@ -21,8 +21,14 @@ const divmod = (numerator, denominator) => {
         remainder:numerator % denominator
     }
 }
-
-module.exports = {log, verdict}
+const isAlphaNumeric = ( word ) => { 
+    if (word.match(/^[0-9a-zA-Z]+$/)) {
+        return true
+    } else {
+        return false
+    }
+}
+module.exports = {log, verdict, isAlphaNumeric}
 
 
 //https://github.com/kermitt/challenges/blob/main/py/FlipWordsButNotSentence.py

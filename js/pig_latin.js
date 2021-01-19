@@ -5,8 +5,12 @@ const {log, verdict} = require('./Tester')
 //     lst = text.split()
 //     return ' '.join( [word[1:] + word[:1] + 'ay' if word.isalpha() else word for word in lst])
 
+function pig_it(str) {
+ //Code here
+ return str.replace(/\b(\w)(\w*)\b/g,"$2$1ay");
 
-const pig_it = (original ) => {
+}
+const pig_it_other = (original ) => {
     let words = original.split(" ") 
     words = words.map(word => pigify_regex(word)).join(" ")
     return words
@@ -14,6 +18,8 @@ const pig_it = (original ) => {
 }
 const pigify_regex = (word) => {
     return word.replace(/(\w)(\w*)(\s|$)/g, "\$2\$1ay\$3")
+    
+//    return word.replace(/(\w)(\w*)(\s|$)/g, "\$2\$1ay\$3")
 }
 const pig_it_mine = (original) => {
     let words = original.split(" ") 

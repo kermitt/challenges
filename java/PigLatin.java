@@ -45,7 +45,6 @@ public class PigLatin extends Tester {
 
 	}
     public static String pigIt(String original) {
-        System.out.println("|" + original + "|"); 
         return original.replaceAll("(\\w)(\\w*)", "$2$1ay");
 
     }
@@ -64,6 +63,10 @@ public class PigLatin extends Tester {
         verdict(pigIt("Pig latin is cool"), "igPay atinlay siay oolcay");
         verdict(pigIt("Pig latin."), "igPay atinlay.");
         verdict(pigIt("z!"), "zay!");
+        verdict(pigIt("z!"), "zay!");
+        verdict(pigIt("yz!"), "zyay!");
+        verdict(pigIt("yz !"), "zyay !");
+
         
 	}
 }

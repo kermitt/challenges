@@ -29,7 +29,7 @@ def pig_it(sentence):
 
 # mine follows
 def pig_it_mine(original):
-    # code ugly, but does pass all the tests
+    # code ugly, but does pass all the tests for
     words = list(original.split(" ")) 
     x = " ".join(map(pigify, words))
     return x 

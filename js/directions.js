@@ -1,23 +1,8 @@
 // https://www.codewars.com/kata/550f22f4d758534c1100025a/train/javascript
 const {log, verdict2} = require('./Tester')
 
-const opposite = {'NORTH': 'SOUTH', 'EAST': 'WEST', 'SOUTH': 'NORTH', 'WEST': 'EAST'}
 
-function dirReduc(plan) { 
-    new_plan = []
-    plan.forEach((d) => {
-        let r = "_"
-        if ( new_plan.length > 0 && new_plan[-1] == opposite[d] ) {
-            new_plan.pop()
-        } else {
-            new_plan.push(d)
-        }
-    })        
-    return new_plan
-}
-
-
-function dirReduc_js(arr) {
+function dirReduc(arr) {
     let str = arr.join(''); 
     let pattern = /NORTHSOUTH|EASTWEST|SOUTHNORTH|WESTEAST/;
     while (pattern.test(str)) { 
@@ -77,7 +62,8 @@ function zap(x, kill) {
 // dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
 
 verdict2(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]), ["WEST"])
-verdict2(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]), ["NORTH", "WEST", "SOUTH", "EAST"])
-verdict2(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]), [])
+// verdict2(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]), ["NORTH", "WEST", "SOUTH", "EAST"])
+// verdict2(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]), [])
+verdict2(dirReduc(["EAST", "EAST", "WEST", "NORTH", "WEST", "EAST", "EAST", "SOUTH", "NORTH", "WEST"]), ["EAST", "NORTH"])
 
 

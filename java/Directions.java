@@ -16,7 +16,11 @@ public class Directions extends Tester {
                 result.add(0, arr[i]);
             }
         }
-        return result.toArray(new String[result.size()]);
+        System.out.println( "BEFORE : " + result ); 
+        String[] goat = result.toArray(new String[result.size()]);
+        log(goat ); 
+        System.out.println(" ... "); 
+        return goat; 
     }    
 
 

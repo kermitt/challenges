@@ -1,15 +1,31 @@
 // https://www.codewars.com/kata/550f22f4d758534c1100025a/train/javascript
 const {log, verdict2} = require('./Tester')
 
-function dirReduc(arr) {
+const opposite = {'NORTH': 'SOUTH', 'EAST': 'WEST', 'SOUTH': 'NORTH', 'WEST': 'EAST'}
+
+function dirReduc(plan) { 
+    new_plan = []
+    plan.forEach((d) => {
+        let r = "_"
+        if ( new_plan.length > 0 && new_plan[-1] == opposite[d] ) {
+            new_plan.pop()
+        } else {
+            new_plan.push(d)
+        }
+    })        
+    return new_plan
+}
+
+
+function dirReduc_js(arr) {
     let str = arr.join(''); 
     let pattern = /NORTHSOUTH|EASTWEST|SOUTHNORTH|WESTEAST/;
     while (pattern.test(str)) { 
         str = str.replace(pattern,'');
     }
-    console.log("BEFORE: " +  typeof str )
+    // console.log("BEFORE: " +  typeof str )
     let after =  str.match(/(NORTH|SOUTH|EAST|WEST)/g)||[];
-    console.log("AFTER  " + typeof after )
+    // console.log("AFTER  " + typeof after )
     return after 
   }
 
